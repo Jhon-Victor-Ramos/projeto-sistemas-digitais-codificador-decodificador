@@ -1,6 +1,6 @@
 # Projeto Sistemas Digitais - UNICAP
 
-Este repositório contém os arquivos referentes ao projeto da disciplina de Sistemas Digitais do curso de Ciência da Computação da Universidade Católica de Pernambuco (UNICAP).
+Este repositório contém os arquivos referentes ao projeto final da disciplina de Sistemas Digitais do curso de Ciência da Computação da Universidade Católica de Pernambuco (UNICAP).
 
 ## Objetivo do Projeto
 
