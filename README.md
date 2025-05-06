@@ -1,18 +1,21 @@
-# Projeto Sistemas Digitais - UNICAP
+# Projeto Final - Sistemas Digitais (UNICAP)
 
-Este repositório contém os arquivos referentes ao projeto final da disciplina de Sistemas Digitais do curso de Ciência da Computação da Universidade Católica de Pernambuco (UNICAP).
+Este repositório contém o projeto final da disciplina de Sistemas Digitais do curso de Ciência da Computação da Universidade Católica de Pernambuco (UNICAP), ministrada pelo Prof. Wilmer Yecid Córdoba.
 
-## Objetivo do Projeto
+## Descrição do Projeto
 
-O projeto consistiu na criação de um sistema digital composto por:
-1.  Um **codificador** que converte números decimais (0-15) para código BCD 8421 e, subsequentemente, para código Gray.
-2.  Um **decodificador** que converte o código Gray gerado para acionar um display de 7 segmentos, exibindo a sequência de 16 letras definida pelo grupo (baseada na frase "UNIVERSIDADE CATOLICA DE PERNAMBUCO").
+O objetivo deste projeto foi construir um sistema digital combinacional composto por duas partes principais:
 
-## Conteúdo do Repositório
+1.  **Codificador:** Converte um número decimal de entrada (0 a 15, representado por 4 bits) para seus equivalentes nos códigos BCD 8421 (para as entradas 0-9) e Gray (para todas as entradas 0-15).
+2.  **Decodificador:** Utiliza a saída do código Gray gerado pelo codificador para acionar um display de 7 segmentos, exibindo uma sequência específica de 16 letras definida pela equipe.
 
-*   `Projeto - Sistemas Digitais.circ`: O arquivo principal contendo o circuito lógico completo desenvolvido e simulado na ferramenta *Logisim*.
-*   `Projeto - Tabelas e Mapas.xlsx`: Planilha contendo as tabelas verdade, mapas de Karnaugh e outras informações auxiliares do projeto.
-*   `README.md`: Este arquivo de descrição.
+## Funcionalidades
+
+*   **Entrada:** 4 bits (A, B, C, D) representando o valor decimal de 0 a 15.
+*   **Saída BCD:** 4 bits (`BCD3` a `BCD0`) mostrando o código BCD correspondente (válido para entradas 0-9).
+*   **Saída Gray:** 4 bits (`G3` a `G0`) mostrando o código Gray correspondente para a entrada.
+*   **Saída 7 Segmentos:** Ativa os segmentos (a-g) de um display para formar letras específicas.
+*   **Sequência Exibida:** Conforme a entrada decimal varia de 0 a 15, o display de 7 segmentos exibe as letras da frase: **"UNIVERSIDADE CATÓLICA DE PERNAMBUCO"**. Os padrões visuais das letras foram definidos pela equipe.
 
 ## Autores
 
@@ -20,17 +23,30 @@ O projeto consistiu na criação de um sistema digital composto por:
 *   [Jhon Victor Ramos Martins](https://github.com/Jhon-Victor-Ramos)
 *   [Rielly Luiza Duarte da Silva](https://github.com/rluizaduarte)
 
-## Ferramentas
+## Ferramentas Utilizadas
 
-*   *Logisim* para desenvolvimento e simulação do circuito.
-*   *Microsoft Excel* para documentação auxiliar.
-*   *Google Docs* para elaboração do relatório.
+*   **Logisim (ou Logisim Evolution):** Para projeto, simulação e validação do circuito digital.
+*   **Microsoft Excel:** Para criação e documentação da Tabela Verdade e dos Mapas de Karnaugh.
+*   **Google Docs:** Para elaboração do relatório.
 
-## Como Utilizar o Circuito
+## Arquivos do Projeto
 
-1.  Certifique-se de ter o [Logisim](http://www.cburch.com/logisim/) ou [Logisim-evolution](https://github.com/logisim-evolution/logisim-evolution) instalado.
-2.  Faça o download (ou clone) do arquivo `.circ` deste repositório.
-3.  Abra o arquivo `Projeto - Sistemas Digitais.circ` no Logisim.
-4.  Interaja com as entradas do circuito para observar o funcionamento do codificador e do decodificador.
+*   `Projeto - Sistemas Digitais_Final.circ`: Arquivo do circuito principal pronto para simulação no Logisim.
+*   `Projeto - Tabelas e Mapas.xlsx`: Planilha contendo a Tabela Verdade completa e os Mapas de Karnaugh utilizados para a simplificação das expressões lógicas.
+*   `Relatorio_Final_Sistemas_Digitais.pdf`: Relatório final detalhado do projeto, incluindo objetivos, metodologia, desenvolvimento cronológico, desafios, soluções e artefatos.
+*   `README.md`: Este arquivo.
 
-*(Última atualização: Maio de 2025)*
+## Como Executar/Visualizar
+
+1.  **Instalação:** Certifique-se de ter o Logisim ou, preferencialmente, o Logisim Evolution instalado em seu computador. (Logisim Evolution é recomendado por ser mais atualizado).
+2.  **Download:** Baixe o arquivo `Projeto - Sistemas Digitais_Final.circ` deste repositório.
+3.  **Abrir:** Abra o arquivo `.circ` utilizando o Logisim/Logisim Evolution.
+4.  **Entradas:** Localize os 4 pinos de entrada no circuito, geralmente rotulados como A, B, C, D (ou In0 a In3). Estes representam o número decimal de entrada (A sendo o bit mais significativo).
+5.  **Interação:** Clique nos pinos de entrada para alternar seus valores (0 ou 1), formando assim as combinações de 0000 (Decimal 0) a 1111 (Decimal 15).
+6.  **Observar Saídas:**
+    *   Verifique os LEDs ou probes conectados às saídas BCD e Gray para observar os códigos gerados.
+    *   Observe o componente Display de 7 Segmentos para visualizar a letra correspondente da sequência "UNIVERSIDADE CATÓLICA DE PERNAMBUCO" sendo exibida para cada combinação de entrada.
+
+## Desafios e Aprendizados
+
+Um dos principais desafios foi garantir o correto mapeamento lógico entre a saída não-ponderada do código Gray e as entradas do decodificador 7-segmentos, superando a confusão inicial com a ordem sequencial do BCD/decimal. Além disso, a definição de padrões customizados para representar as letras no display de 7 segmentos foi um exercício importante de design dentro das limitações da ferramenta. O projeto reforçou a importância da validação cuidadosa em cada etapa do processo de design digital.
