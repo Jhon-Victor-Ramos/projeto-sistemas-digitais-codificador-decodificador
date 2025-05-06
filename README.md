@@ -16,6 +16,7 @@ O objetivo deste projeto foi construir um sistema digital combinacional composto
 *   **Saída Gray:** 4 bits (`G3` a `G0`) mostrando o código Gray correspondente para a entrada.
 *   **Saída 7 Segmentos:** Ativa os segmentos (a-g) de um display para formar letras específicas.
 *   **Sequência Exibida:** Conforme a entrada decimal varia de 0 a 15, o display de 7 segmentos exibe as letras da frase: **"UNIVERSIDADE CATÓLICA DE PERNAMBUCO"**. Os padrões visuais das letras foram definidos pela equipe.
+![Representação customizada das letras no display 7-segmentos](Representação%20visual%20escolhida%20pela%20equipe%20para%20display%207-segmentos.png)
 
 ## Autores
 
@@ -27,7 +28,7 @@ O objetivo deste projeto foi construir um sistema digital combinacional composto
 
 *   **Logisim (ou Logisim Evolution):** Para projeto, simulação e validação do circuito digital.
 *   **Microsoft Excel:** Para criação e documentação da Tabela Verdade e dos Mapas de Karnaugh.
-*   **Google Docs:** Para elaboração do relatório.
+*   **Google Docs:** Para elaboração do [relatório](https://docs.google.com/document/d/1UVIBaWjSoAdevRTAlSgnUcrOSoP84tw-gWTTC1Gpt-w/edit?usp=sharing).
 
 ## Arquivos do Projeto
 
