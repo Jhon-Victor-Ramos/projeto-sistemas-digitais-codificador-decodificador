@@ -6,16 +6,16 @@ Este repositório contém o projeto final da disciplina de Sistemas Digitais do 
 
 O objetivo deste projeto foi construir um sistema digital combinacional composto por duas partes principais:
 
-1.  **Codificador:** Converte um número decimal de entrada (0 a 15, representado por 4 bits) para seus equivalentes nos códigos BCD 8421 (para as entradas 0-9) e Gray (para todas as entradas 0-15).
+1.  **Codificador:** Converte um número decimal de entrada (0 a 15, representado por 4 bits) para código Gray. A representação binária direta da entrada decimal foi usada como passo intermediário para esta conversão.
 2.  **Decodificador:** Utiliza a saída do código Gray gerado pelo codificador para acionar um display de 7 segmentos, exibindo uma sequência específica de 16 letras definida pela equipe.
 
 ## Funcionalidades
 
-*   **Entrada:** 4 bits (A, B, C, D) representando o valor decimal de 0 a 15.
-*   **Saída BCD:** 4 bits (`BCD3` a `BCD0`) mostrando o código BCD correspondente (válido para entradas 0-9).
+*   **Entrada:** Um valor decimal de 0 a 15, tipicamente fornecido através de um conjunto de botões no circuito principal (cada botão correspondendo a um valor decimal).
+*   **Representação Binária Intermediária:** 4 bits (`BCD3` a `BCD0`) mostrando a representação binária direta da entrada decimal (0-15), utilizada como base para a conversão Gray.
 *   **Saída Gray:** 4 bits (`G3` a `G0`) mostrando o código Gray correspondente para a entrada.
 *   **Saída 7 Segmentos:** Ativa os segmentos (a-g) de um display para formar letras específicas.
-*   **Sequência Exibida:** Conforme a entrada decimal varia de 0 a 15, o display de 7 segmentos exibe as letras da frase: **"UNIVERSIDADE CATÓLICA DE PERNAMBUCO"**. Os padrões visuais das letras foram definidos pela equipe.
+*   **Sequência Exibida:** Conforme a entrada decimal varia de 0 a 15, o display de 7 segmentos exibe as letras da frase: **"UNIVERSIDADE CATÓLICA DE PERNAMBUCO"**. Os padrões visuais das letras foram definidos pelo grupo.
 ![Representação customizada das letras no display 7-segmentos](Representação%20visual%20escolhida%20pela%20equipe%20para%20display%207-segmentos.png)
 
 ## Autores
@@ -42,12 +42,16 @@ O objetivo deste projeto foi construir um sistema digital combinacional composto
 1.  **Instalação:** Certifique-se de ter o Logisim ou, preferencialmente, o Logisim Evolution instalado em seu computador. (Logisim Evolution é recomendado por ser mais atualizado).
 2.  **Download:** Baixe o arquivo `Projeto - Sistemas Digitais_Final.circ` deste repositório.
 3.  **Abrir:** Abra o arquivo `.circ` utilizando o Logisim/Logisim Evolution.
-4.  **Entradas:** Localize os 4 pinos de entrada no circuito, geralmente rotulados como A, B, C, D (ou In0 a In3). Estes representam o número decimal de entrada (A sendo o bit mais significativo).
-5.  **Interação:** Clique nos pinos de entrada para alternar seus valores (0 ou 1), formando assim as combinações de 0000 (Decimal 0) a 1111 (Decimal 15).
+4.  **Entradas:** O método principal de entrada no circuito final (`main`) é através de um conjunto de **botões**, onde cada um corresponde a um valor decimal de 0 a 15.
+5.  **Interação:** Clique no botão correspondente ao valor decimal desejado (0-15). Pode ser necessário manter o botão pressionado para que a saída se estabilize e seja corretamente propagada pelo circuito.
 6.  **Observar Saídas:**
     *   Verifique os LEDs ou probes conectados às saídas BCD e Gray para observar os códigos gerados.
     *   Observe o componente Display de 7 Segmentos para visualizar a letra correspondente da sequência "UNIVERSIDADE CATÓLICA DE PERNAMBUCO" sendo exibida para cada combinação de entrada.
 
+**Nota Importante sobre Execução:**
+*   **Logisim Evolution:** É altamente recomendado utilizar o **Logisim Evolution**.
+*   **Erro de Biblioteca (TCL):** Se ocorrer um erro referente à biblioteca 'TCL', certifique-se de estar usando uma versão recente do Logisim Evolution. Nenhum arquivo de biblioteca externa `.jar` adicional é requerido para este projeto.
+
 ## Desafios e Aprendizados
 
-Um dos principais desafios foi garantir o correto mapeamento lógico entre a saída não-ponderada do código Gray e as entradas do decodificador 7-segmentos, superando a confusão inicial com a ordem sequencial do BCD/decimal. Além disso, a definição de padrões customizados para representar as letras no display de 7 segmentos foi um exercício importante de design dentro das limitações da ferramenta. O projeto reforçou a importância da validação cuidadosa em cada etapa do processo de design digital.
+Um dos principais desafios foi garantir o correto mapeamento lógico entre a saída não-ponderada do código Gray e as entradas do decodificador 7-segmentos, superando a confusão inicial com a ordem sequencial do BCD/decimal. A definição de padrões customizados para representar as letras no display de 7 segmentos foi um exercício importante de design. Adicionalmente, na fase final de integração, surgiu um desafio relacionado a dependências de bibliotecas ('TCL') no Logisim, ressaltando a importância de gerenciar o ambiente de desenvolvimento e garantir a portabilidade dos componentes. O projeto reforçou a importância da validação cuidadosa em cada etapa do processo de design digital.
